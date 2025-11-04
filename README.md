@@ -7,6 +7,52 @@ This extracts rbxlx files into [Rojo](https://rojo.space/) compatible structures
 > [!IMPORTANT]
 > You cannot use a rbxl file, as it is binary, and I have not implemented support for that.
 
+You may customize it in [extractor.luau](extraction/extract.luau) with these:
+
+```luau
+-- These are the services we want to extract from the place file
+-- You can modify this list to include services as needed. Keep in mind that StarterPlayer includes
+-- starterplayerscripts and startercharacterscripts as children, which are handled separately.
+local SERVICES_TO_EXTRACT = {
+	"Workspace",
+	"Lighting",
+	"ReplicatedFirst",
+	"ReplicatedStorage",
+	"ServerScriptService",
+	"ServerStorage",
+	"StarterGui",
+	"StarterPack",
+	"StarterPlayer",
+	"SoundService",
+}
+
+-- You can remove one of these if you don't want to extract both
+-- You must extract StarterPlayer itself first before extracting these children
+local STARTER_PLAYER_CHILDREN = {
+	"StarterPlayerScripts",
+	"StarterCharacterScripts",
+}
+
+-- ANSI color codes for terminal output
+-- You can customize these colors as desired
+-- Don't change unless you know what you are doing
+local COLORS = {
+	reset = "\27[0m",
+	red = "\27[91m",
+	green = "\27[92m",
+	yellow = "\27[93m",
+	blue = "\27[94m",
+	magenta = "\27[95m",
+	cyan = "\27[96m",
+	white = "\27[97m",
+	orange = "\27[38;5;214m",
+	gold = "\27[38;5;226m",
+	purple = "\27[38;5;177m",
+	pink = "\27[38;5;219m",
+	lime = "\27[38;5;155m",
+}
+```
+
 # Tutorial to make this work ✨
 ## Extract zip archive
 
@@ -241,4 +287,5 @@ lune run extraction/extract.luau
 Make sure the **.rbxlx** file is in the extraction/ folder too! It should write everything to src/ in the root of the project.
 
 It will show bars loading as it progresses. Enjoy!
+
 
