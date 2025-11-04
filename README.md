@@ -7,7 +7,34 @@ This extracts rbxlx files into [Rojo](https://rojo.space/) compatible structures
 > [!IMPORTANT]
 > You cannot use a rbxl file, as it is binary, and I have not implemented support for that.
 
-## Tutorial to install
+# Tutorial to make this work ✨
+## Extract zip archive
+
+### 1. Download the ZIP Archive
+- Click [here](https://github.com/Paryx-games/rbxlx-extractor/archive/refs/tags/v1.zip) to download the `rbxlx-extractor-1.zip` file.
+
+### 2. Extract the Files
+- Once the ZIP file is downloaded, locate it in your file explorer (likely in your `Downloads` folder).
+- Right-click the file and select **Extract All...**.
+- Follow the on-screen instructions to unzip the folder.
+
+### 3. Access the Extracted Files
+- After extracting, open the folder you just unzipped.
+- To get to the folder through the terminal, follow these steps:
+  - **Windows:** Open Command Prompt (or PowerShell) and type the following command:
+    ```bash
+    cd Downloads\rbxlx-extractor-1
+    ```
+  - **Mac/Linux:** Open Terminal and type:
+    ```bash
+    cd ~/Downloads/rbxlx-extractor-1
+    ```
+
+### Extra Tips
+- If you're unsure where the ZIP file went, check your browser's download location or look for a folder named `rbxlx-extractor-1`.
+
+## Install Lune (if you havent already)
+
 _Extracted from https://lune-org.github.io/docs/getting-started/1-installation/_
 
 The preferred way of installing Lune is using [Rokit](https://github.com/rojo-rbx/rokit), a toolchain manager for Roblox projects. Rokit can manage your installed version of Lune and other ecosystem tools, and allows you to easily upgrade to newer versions as they become available.
@@ -214,3 +241,4 @@ lune run extraction/extract.luau
 Make sure the **.rbxlx** file is in the extraction/ folder too! It should write everything to src/ in the root of the project.
 
 It will show bars loading as it progresses. Enjoy!
+
